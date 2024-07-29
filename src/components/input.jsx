@@ -1,6 +1,6 @@
 export function Input({ label, id, data, handleData }) {
   return (
-    <>
+    <div>
       <label htmlFor={id}> {label} </label>
       <input
         id={id}
@@ -8,13 +8,13 @@ export function Input({ label, id, data, handleData }) {
         onChange={(event) => handleData({ ...data, [id]: event.target.value })}
         required
       ></input>
-    </>
+    </div>
   );
 }
 
 export function School({ n, data, handleData }) {
   return (
-    <div>
+    <div className="schoolSection">
       <Input
         label="School name: "
         id={"school" + n}
@@ -66,7 +66,7 @@ function FromToInput({ n, data, handleData }) {
 
 export function Job({ n, data, handleData }) {
   return (
-    <div>
+    <div className="jobSection">
       <Input
         label="Company name: "
         id={"company" + n}

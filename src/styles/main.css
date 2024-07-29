@@ -1,0 +1,38 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form section {
+    width: min(80vw, 80vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div, button {
+    margin-bottom: 8px;
+}
+
+button[type="submit"]{
+    width: 80px;
+    background-color: #f39c12;
+}
+
+.schoolSection, .jobSection {
+    border: 4px #3498db  solid;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px;
+}
+
+input:hover, button:hover {
+    box-shadow: 2px 4px 4px black;
+}
+
+.cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

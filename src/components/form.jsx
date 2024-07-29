@@ -84,7 +84,7 @@ export function Form() {
   }
 
   return (
-    <>
+    <div className="cv">
       <h1>{dataObj.name}'s CV</h1>
       <h2>Educational experience</h2>
       {schoolData}
@@ -95,7 +95,7 @@ export function Form() {
         Email {dataObj.name} at {dataObj.email} or call {dataObj.phone}
       </p>
       {console.log(dataObj)}
-    </>
+    </div>
   );
 }
 
