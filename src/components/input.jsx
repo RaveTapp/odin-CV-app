@@ -33,10 +33,10 @@ export function School({ n, data, handleData }) {
 }
 
 function FromToInput({ n, data, handleData }) {
-    const fromId = "from" + n;
-    const toId = "to" + n;
+  const fromId = "from" + n;
+  const toId = "to" + n;
 
-    return (
+  return (
     <>
       <label htmlFor={fromId}> From </label>
       <input
@@ -44,7 +44,9 @@ function FromToInput({ n, data, handleData }) {
         type="number"
         min={1900}
         max={2100}
-        onChange={(event) => handleData({ ...data, [fromId]: event.target.value })}
+        onChange={(event) =>
+          handleData({ ...data, [fromId]: event.target.value })
+        }
         required
       ></input>
       <label htmlFor={toId}> to </label>
@@ -53,7 +55,9 @@ function FromToInput({ n, data, handleData }) {
         type="number"
         min={1900}
         max={2100}
-        onChange={(event) => handleData({ ...data, [toId]: event.target.value })}
+        onChange={(event) =>
+          handleData({ ...data, [toId]: event.target.value })
+        }
         required
       ></input>
     </>
@@ -87,10 +91,10 @@ export function Job({ n, data, handleData }) {
 }
 
 function FromUntilInput({ n, data, handleData }) {
-    const jobFromId = "jobFrom" + n;
-    const untilId = "until" + n;
-  
-    return (
+  const jobFromId = "jobFrom" + n;
+  const untilId = "until" + n;
+
+  return (
     <>
       <label htmlFor={jobFromId}> From </label>
       <input
@@ -98,7 +102,9 @@ function FromUntilInput({ n, data, handleData }) {
         type="number"
         min={1900}
         max={2100}
-        onChange={(event) => handleData({ ...data, [jobFromId]: event.target.value })}
+        onChange={(event) =>
+          handleData({ ...data, [jobFromId]: event.target.value })
+        }
         required
       ></input>
       <label htmlFor={untilId}> until </label>
@@ -107,7 +113,9 @@ function FromUntilInput({ n, data, handleData }) {
         type="number"
         min={1900}
         max={2100}
-        onChange={(event) => handleData({ ...data, [untilId]: event.target.value })}
+        onChange={(event) =>
+          handleData({ ...data, [untilId]: event.target.value })
+        }
         required
       ></input>
     </>
