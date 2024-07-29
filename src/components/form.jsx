@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-import { Input } from "./input.jsx";
-import { School } from "./school.jsx"
-import { Job } from "./job.jsx"
+import { Input, School, Job } from "./input.jsx";
 
 export function Form(){
     const [numSchools, setNumSchools] = useState(1);
