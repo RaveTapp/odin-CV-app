@@ -12,12 +12,12 @@ export function Form(){
 
     const schools = [];
     for(let i = 0; i < numSchools; i++){
-        schools.push(<School key={i} n={i} />);
+        schools.push(<School key={i} n={i} data={dataObj} handleData={setDataObj} />);
     }
 
     const jobs = [];
     for(let i = 0; i < numJobs; i++){
-        jobs.push(<Job key={i} n={i} />);
+        jobs.push(<Job key={i} n={i} data={dataObj} handleData={setDataObj} />);
     }
     console.log(dataObj);
     if(!isSubmitted){
@@ -43,6 +43,7 @@ export function Form(){
     }
     return <>
         <h1>Test CV</h1>
+        {console.log(dataObj)}
     </>
 }
 

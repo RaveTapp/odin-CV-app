@@ -2,69 +2,112 @@ export function Input({ label, id, data, handleData }) {
   return (
     <>
       <label htmlFor={id}> {label} </label>
-      <input id={id} type="text" onChange={(event) => handleData({...data, [id]: event.target.value})} required></input>
+      <input
+        id={id}
+        type="text"
+        onChange={(event) => handleData({ ...data, [id]: event.target.value })}
+        required
+      ></input>
     </>
   );
 }
 
-export function School({ n }) {
+export function School({ n, data, handleData }) {
   return (
     <div>
-      <Input label="School name: " id={"school" + n}></Input>
-      <Input label="Title of study: " id={"study" + n}></Input>
-      <FromToInput n={n} />
+      <Input
+        label="School name: "
+        id={"school" + n}
+        data={data}
+        handleData={handleData}
+      />
+      <Input
+        label="Title of study: "
+        id={"study" + n}
+        data={data}
+        handleData={handleData}
+      />
+      <FromToInput n={n} data={data} handleData={handleData} />
     </div>
   );
 }
 
-function FromToInput({ n }) {
-  return (
+function FromToInput({ n, data, handleData }) {
+    const fromId = "from" + n;
+    const toId = "to" + n;
+
+    return (
     <>
-      <label htmlFor={"from" + n}> From </label>
+      <label htmlFor={fromId}> From </label>
       <input
-        id={"from" + n}
+        id={fromId}
         type="number"
         min={1900}
         max={2100}
+        onChange={(event) => handleData({ ...data, [fromId]: event.target.value })}
         required
       ></input>
-      <label htmlFor={"to" + n}> to </label>
-      <input id={"to" + n} type="number" min={1900} max={2100} required></input>
+      <label htmlFor={toId}> to </label>
+      <input
+        id={toId}
+        type="number"
+        min={1900}
+        max={2100}
+        onChange={(event) => handleData({ ...data, [toId]: event.target.value })}
+        required
+      ></input>
     </>
   );
 }
 
-export function Job({ n }) {
+export function Job({ n, data, handleData }) {
   return (
     <div>
-      <Input label="Company name: " id={"company" + n}></Input>
-      <Input label="Position title: " id={"position" + n}></Input>
+      <Input
+        label="Company name: "
+        id={"company" + n}
+        data={data}
+        handleData={handleData}
+      />
+      <Input
+        label="Position title: "
+        id={"position" + n}
+        data={data}
+        handleData={handleData}
+      />
       <Input
         label="Main responsibilities: "
         id={"responsibilities" + n}
-      ></Input>
-      <FromUntilInput n={n} />
+        data={data}
+        handleData={handleData}
+      />
+      <FromUntilInput n={n} data={data} handleData={handleData} />
     </div>
   );
 }
 
-function FromUntilInput({ n }) {
-  return (
+function FromUntilInput({ n, data, handleData }) {
+    const jobFromId = "jobFrom" + n;
+    const untilId = "until" + n;
+  
+    return (
     <>
-      <label htmlFor={"jobFrom" + n}> From </label>
+      <label htmlFor={jobFromId}> From </label>
       <input
-        id={"jobFrom" + n}
+        id={jobFromId}
         type="number"
         min={1900}
         max={2100}
+        onChange={(event) => handleData({ ...data, [jobFromId]: event.target.value })}
         required
       ></input>
-      <label htmlFor={"until" + n}> until </label>
+      <label htmlFor={untilId}> until </label>
       <input
-        id={"until" + n}
+        id={untilId}
         type="number"
         min={1900}
         max={2100}
+        onChange={(event) => handleData({ ...data, [untilId]: event.target.value })}
         required
       ></input>
     </>
