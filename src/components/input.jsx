@@ -1,8 +1,8 @@
-export function Input({ label, id }) {
+export function Input({ label, id, data, handleData }) {
   return (
     <>
       <label htmlFor={id}> {label} </label>
-      <input id={id} type="text" required></input>
+      <input id={id} type="text" onChange={(event) => handleData({...data, [id]: event.target.value})} required></input>
     </>
   );
 }

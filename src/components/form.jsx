@@ -8,6 +8,7 @@ export function Form(){
     const [numSchools, setNumSchools] = useState(1);
     const [numJobs, setNumJobs] = useState(0);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [dataObj, setDataObj] = useState("");
 
     const schools = [];
     for(let i = 0; i < numSchools; i++){
@@ -18,13 +19,14 @@ export function Form(){
     for(let i = 0; i < numJobs; i++){
         jobs.push(<Job key={i} n={i} />);
     }
+    console.log(dataObj);
     if(!isSubmitted){
         return <form onSubmit={(event) => {handleSubmit(event, setIsSubmitted)}}>
             <section className="general">
                 <h1>General information</h1>
-                <Input label="Fullname: " id="name" />
-                <Input label="Email: " id="email" />
-                <Input label="Phone number: " id="phone" />
+                <Input label="Fullname: " id="name" data={dataObj} handleData={setDataObj} />
+                <Input label="Email: " id="email" data={dataObj} handleData={setDataObj} />
+                <Input label="Phone number: " id="phone" data={dataObj} handleData={setDataObj} />
             </section>
             <section className="education">
                 <h1>Education</h1>
